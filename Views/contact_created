@@ -1,0 +1,7 @@
+<h1>You created a contact!</h1>
+<ul>
+  <li>Name: @model.GetName()</li>
+  <li>Phone Number: @model.GetPhoneNumber()</li>
+  <li>Address: @model.GetAddress()
+<ul>
+<p><a href="/">Return to contact list</a></p>
