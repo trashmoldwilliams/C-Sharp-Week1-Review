@@ -45,5 +45,10 @@ namespace AdBook.Objects
     {
       _name = newAddress;
     }
+
+    public static List<Contact> GetAll()
+    {
+      return _instances;
+    }
   }
 }
