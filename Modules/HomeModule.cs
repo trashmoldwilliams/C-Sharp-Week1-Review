@@ -8,7 +8,7 @@ namespace AddressBook
   {
     public HomeModule()
     {
-      Get["/contacts"] = _ => {
+      Get["/"] = _ => {
         List<Contact> allContacts = Contact.GetAll();
         return View["index.cshtml", allContacts];
       };
@@ -22,12 +22,12 @@ namespace AddressBook
         return View["contact_created.cshtml", newContact];
       };
 
-      Get["contacts/{id}"] = parameters => {
+      Get["/contacts/{id}"] = parameters => {
         Contact selectedContact = Contact.Find(parameters.id);
         return View["contact_details.cshtml", selectedContact];
       };
 
-      Post["/contacts/deleted"] = _ => {
+      Get["/contacts/cleared"] = _ => {
         Contact.ClearAll();
         return View["contacts_deleted.cshtml"];
       };
