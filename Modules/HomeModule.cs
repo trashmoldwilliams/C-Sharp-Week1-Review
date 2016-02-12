@@ -9,8 +9,12 @@ namespace AddressBook
     public HomeModule()
     {
       Get["/"] = _ => {
+        return View["index.html"];
+      };
+
+      Get["/contacts"] = _ => {
         List<Contact> allContacts = Contact.GetAll();
-        return View["index.cshtml", allContacts];
+        return View["contacts.cshtml", allContacts];
       };
 
       Get["/contacts/new"] = _ => {
